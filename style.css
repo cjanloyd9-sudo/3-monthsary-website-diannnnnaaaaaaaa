@@ -496,17 +496,11 @@ img { display: block; max-width: 100%; }
 @media (max-width: 650px) {
   .monthsary-grid {
     grid-template-columns: 1fr 1fr;
-    gap: 10px 8px;
+    justify-content: center;
+    justify-items: center;
   }
   .polaroid-left,
   .polaroid-right {
-    width: 100%;
-    max-width: 170px;
+    justify-self: center;
   }
-  .polaroid-left { transform: rotate(-2deg); }
-  .polaroid-right { transform: rotate(2deg); }
-  .polaroid-left img,
-  .polaroid-right img { height: 150px; }
-  .polaroid-left figcaption,
-  .polaroid-right figcaption { font-size: 18px; }
 }
