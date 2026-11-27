@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f6dce7">
+  <title>Our 3rd Monthsary ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Quicksand:wght@500;600;700&family=Sacramento&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="hearts-layer" id="heartsLayer" aria-hidden="true"></div>
+  <div class="page-indicator" aria-label="Page indicator">
+    <button class="indicator-dot active" data-page="0" aria-label="Lock screen"></button>
+    <button class="indicator-dot" data-page="1" aria-label="Monthsary page"></button>
+    <button class="indicator-dot" data-page="2" aria-label="Reasons page"></button>
+    <button class="indicator-dot" data-page="3" aria-label="Little gifts page"></button>
+    <button class="indicator-dot" data-page="4" aria-label="Little game"></button>
+    <button class="indicator-dot" data-page="5" aria-label="Final letter"></button>
+  </div>
+
+  <main class="story" id="story">
+    <section class="story-page lock-page active" id="page-lock">
+      <div class="gingham-wash"></div>
+      <div class="floating-decor" aria-hidden="true"><span>♡</span><span>♥</span><span>♡</span><span>✿</span></div>
+      <div class="lock-card paper-card">
+        <div class="bow"><span></span><i></i><span></span></div>
+        <p class="script-line">A little secret for you ♡</p>
+        <h1>Our Little Love Story</h1>
+        <p class="intro">I made something special just for you, baby.</p>
+        <div class="envelope" id="envelope" role="button" tabindex="0" aria-label="Open love letter">
+          <div class="envelope-letter">What day and month is our 3 monthsary? ♡</div>
+          <div class="envelope-flap"></div>
+          <div class="heart-seal">♥</div>
+        </div>
+        <p class="passcode-label">Enter our secret passcode ♡</p>
+        <form id="lockForm" autocomplete="off">
+          <div class="passcode-row">
+            <input id="passcode" type="password" inputmode="numeric" maxlength="4" aria-label="Four digit passcode" placeholder="••••">
+            <button class="primary-button" type="submit">Unlock My Heart ♡</button>
+          </div>
+          <p class="lock-message" id="lockMessage" aria-live="polite"></p>
+        </form>
+      </div>
+      <div class="success-overlay" id="successOverlay" aria-hidden="true">
+        <div class="success-heart">♥</div>
+        <h2>YOU GOT IT!</h2>
+        <p>I LOVE YOUUU!</p>
+      </div>
+    </section>
+
+    <section class="story-page anniversary-page" id="page-anniversary">
+      <div class="page-flower flower-left" aria-hidden="true">❀</div>
+      <div class="page-shell">
+        <header class="page-heading">
+          <p class="eyebrow">three months of loving you ♡</p>
+          <h1>HAPPY 3 MONTHSARY!</h1>
+        </header>
+        <div class="monthsary-grid">
+          <figure class="polaroid polaroid-left">
+            <img src="images/IMG_9427.PNG" alt="August 8 memory">
+            <figcaption>August 8 ♡</figcaption>
+          </figure>
+
+          <article class="love-letter paper-card">
+            <span class="lace-corner top-left"></span><span class="lace-corner bottom-right"></span>
+            <p class="letter-script">To My Favourite Person</p>
+            <p class="letter-text">Baby, it’s crazy how far we’ve come since August. From when we first started dating to now, almost being in December, we’ve made so many memories and gone through so much together. We’ve had our ups and downs, learned more about each other and grown together along the way. I’m genuinely grateful for every moment with you, and I wouldn’t trade what we have for anything. It’s only been a few months, but I’m excited for all the memories we still have ahead of us. I love you baby ❤️</p>
+            <button class="primary-button story-button" data-go="2">Continue Our Story ♡</button>
+          </article>
+
+          <figure class="polaroid polaroid-right">
+            <img src="images/IMG_1820.JPG" alt="17 November memory">
+            <figcaption>17 November ♡</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="story-page reasons-page" id="page-reasons">
+      <div class="page-shell reasons-layout">
+        <article class="reasons-photo">
+          <figure class="polaroid big-polaroid">
+            <img src="images/Untitled-1.png" alt="My favourite girl">
+            <figcaption>my favourite girl ♡</figcaption>
+          </figure>
+        </article>
+
+        <article class="reasons-paper paper-card">
+          <p class="eyebrow">and a million more to go...</p>
+          <h1>10 Reasons Why I Love You</h1>
+          <ol class="reasons-list">
+            <li>You're my favourite little cute chicken nugget to cuddle with.</li>
+            <li>Because you're SO PRETTY AND BEAUTIFUL, LIKE UR SO FINE LIKE SOOOO FINE DID I SAY THAT ALREADY??? 😭❤️</li>
+            <li>You're my favourite person to eat with, even if we can't decide what to get.</li>
+            <li>Because I can be my most unserious self around you.</li>
+            <li>Because even doing absolutely nothing with you sounds fun.</li>
+            <li>Because I could listen to you yap about the most random things and never get tired of you.</li>
+            <li>Because you have a way of making my day better without even realising it.</li>
+            <li>Because I love all your little habits and the silly things that make you YOU.</li>
+            <li>Because I get excited over the smallest things when they're with you.</li>
+            <li>Because no matter how many months pass, I still get to discover new things to love about you. ❤️</li>
+          </ol>
+          <button class="primary-button story-button" data-go="3">Little Gifts ♡</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="story-page gifts-page" id="page-gifts">
+      <div class="gifts-bow" aria-hidden="true"><span></span><i></i><span></span></div>
+      <div class="page-shell gifts-layout">
+        <header class="gifts-heading">
+          <p class="eyebrow">little gifts, big love ♡</p>
+          <h1>Little Gifts, Big Love ♡</h1>
+          <p>A few things I've given you, but each one means so much to me.</p>
+        </header>
+
+        <article class="gift-photo-card">
+          <div class="gift-ribbon ribbon-left"></div>
+          <div class="gift-ribbon ribbon-right"></div>
+          <figure class="polaroid gifts-polaroid">
+            <img src="images/gifts-optimized.jpg" alt="Two favourite gifts">
+            <figcaption>little things, lots of love ♡</figcaption>
+          </figure>
+        </article>
+
+        <div class="gift-copy">
+          <article class="gift-letter paper-card">
+            <span class="gift-heart">♥</span>
+            <h2>The First Promise ♡</h2>
+            <p>Remember when I promised you a Jellycat and a Jellycat monkey? I really wanted to keep that promise and finally get them for you. I loved seeing you receive something I had promised you, because I wanted you to have something soft and cuddly that would remind you of me. It might have been a little gift, but it meant a lot to me to be able to give you something you wanted.</p>
+          </article>
+
+          <article class="gift-letter paper-card">
+            <span class="gift-heart">♥</span>
+            <h2>My Favourite Surprise ♡</h2>
+            <p>This has to be my favourite gift I've given you. I spent almost three days making the roses, and although I struggled at first, I kept pushing myself because I knew I was making them for you. I'm so happy with how they turned out. I also got you the Spider-Man plushie because it reminded me of our first hangout, when we watched the new Spider-Man movie and were just starting to like each other. It's a memory I'll never forget, and I'll always cherish that moment and every memory we've made since. ❤️</p>
+          </article>
+
+          <p class="gift-signoff">Every gift has a little piece of my heart in it. I hope you know how much I love spoiling you, baby. ♡</p>
+          <button class="primary-button story-button" data-go="4">Little Game for You ♡</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="story-page game-page" id="page-game">
+      <div class="game-sparkles" aria-hidden="true">✦ ✿ ✦ ♡ ✦</div>
+      <div class="page-shell game-layout">
+        <header class="game-heading">
+          <p class="eyebrow">How well do you know us? ♡</p>
+          <h1>Let's Play a Little Game! ♡</h1>
+          <p>Let's see how well you remember our little love story, baby.</p>
+        </header>
+
+        <article class="quiz-card paper-card" id="quizCard">
+          <div class="quiz-progress-track" aria-label="Quiz progress">
+            <div class="quiz-progress" id="quizProgress"></div>
+          </div>
+          <p class="quiz-count" id="quizCount">Question 1 of 5</p>
+          <h2 class="quiz-question" id="quizQuestion"></h2>
+          <div class="quiz-answers" id="quizAnswers"></div>
+          <p class="quiz-feedback" id="quizFeedback" aria-live="polite"></p>
+          <button class="primary-button quiz-next" id="quizNext" type="button" hidden>Next Question ♡</button>
+        </article>
+
+        <article class="quiz-result paper-card" id="quizResult" hidden>
+          <div class="result-heart">♥</div>
+          <h2>YOU FINISHED OUR LITTLE GAME! ♡</h2>
+          <p class="quiz-score" id="quizScore"></p>
+          <p class="result-message">Even if you didn't get every answer right, don't worry baby. What matters most is all the memories we've made together and all the ones we still have waiting for us. I hope we keep making a million more memories. I love you endlessly! ❤️</p>
+          <div class="result-buttons">
+            <button class="soft-button" id="playAgain" type="button">Play Again ♡</button>
+            <button class="primary-button" id="continueStory" type="button">Continue Our Story 💗</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="story-page final-page" id="page-final">
+      <div class="page-shell final-layout">
+        <figure class="polaroid final-polaroid">
+          <img src="images/dididid.png" alt="My forever girl">
+          <figcaption>my forever girl ♡</figcaption>
+        </figure>
+        <article class="final-letter paper-card">
+          <p class="letter-script">To My Forever Girl</p>
+          <p class="final-subtitle">♡ my favourite forever ♡</p>
+          <p class="letter-text">Three months down, and so many more to go.
+
+Thank you for being my happiness, my comfort, my favourite person and my home.
+
+I hope we keep making silly memories, laughing together, growing together and choosing each other every single day.
+
+I love you endlessly, baby. ♡</p>
+          <div class="final-buttons">
+            <button class="primary-button" id="loveButton">I LOVE YOU! ♡</button>
+            <button class="soft-button" id="restartButton">Read Our Story Again ♡</button>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <aside class="music-player" id="musicPlayer">
+    <div class="album-art"><img src="images/album-art.jpg" alt="Ripples album artwork"></div>
+    <div class="song-info">
+      <strong>Ripples</strong>
+      <span>Beabadoobee</span>
+    </div>
+    <button class="music-control" id="playButton" aria-label="Play music">▶</button>
+    <input class="progress" id="progress" type="range" min="0" max="100" value="0" aria-label="Song progress">
+    <input class="volume" id="volume" type="range" min="0" max="1" step="0.01" value="0.7" aria-label="Volume">
+    <audio id="audio" preload="metadata">
+      <source src="music/our-song.mp3" type="audio/mpeg">
+    </audio>
+  </aside>
+
+  <div class="love-popup" id="lovePopup" role="dialog" aria-modal="true" aria-hidden="true">
+    <button class="popup-close" id="popupClose" aria-label="Close">×</button>
+    <div class="popup-heart">♥</div>
+    <h2>You're stuck with me foreverrr! 💗</h2>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
