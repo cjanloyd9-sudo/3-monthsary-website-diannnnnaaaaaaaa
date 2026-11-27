@@ -465,19 +465,24 @@ img { display: block; max-width: 100%; }
   object-fit: cover;
 }
 .polaroid-left figcaption,
-.polaroid-right figcaption,
-.polaroid figcaption {
+.polaroid-right figcaption {
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 6px;
-  height: 26px;
-  display: grid;
-  place-items: center;
+  left: calc(100% + 12px);
+  right: auto;
+  bottom: auto;
+  top: 50%;
+  width: max-content;
+  height: auto;
+  display: block;
+  transform: translateY(-50%) rotate(-3deg);
   font-family: "Sacramento", cursive;
-  font-size: 21px;
-  line-height: 1;
-  color: #9d4d69;
+  font-size: clamp(18px, 2vw, 26px);
+  white-space: nowrap;
+  color: #a34d6c;
+  text-shadow: 0 2px 0 rgba(255,255,255,.55);
+}
+.polaroid-right figcaption {
+  transform: translateY(-50%) rotate(3deg);
 }
 
 @media (max-width: 900px) {
