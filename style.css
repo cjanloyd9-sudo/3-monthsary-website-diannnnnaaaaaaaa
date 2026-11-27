@@ -1,366 +1,34 @@
-:root {
-  --pink: #e68aaa;
-  --blush: #f8dce6;
-  --rose: #c85f85;
-  --cream: #fffaf3;
-  --burgundy: #7d3e56;
-  --gingham: rgba(181, 78, 111, .13);
-}
-* { box-sizing: border-box; }
+/* ===== CLEAN SIX-PAGE REBUILD ===== */
+:root { --safe-bottom: 72px; }
+*, *::before, *::after { box-sizing: border-box; }
 html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; }
-body {
-  font-family: "Quicksand", sans-serif;
-  color: var(--burgundy);
-  background: #f5d9e4;
-}
+body { min-height: 100svh; }
 button, input { font: inherit; }
-button { cursor: pointer; }
-
-.story { display: flex; width: 600%; height: 100%; transition: transform 1.05s cubic-bezier(.72, 0, .18, 1); }
-.story[data-page="1"] { transform: translateX(-16.666666%); }
-.story[data-page="2"] { transform: translateX(-33.333333%); }
-.story[data-page="3"] { transform: translateX(-50%); }
-.story[data-page="4"] { transform: translateX(-66.666666%); }
-.story[data-page="5"] { transform: translateX(-83.333333%); }
-.story-page { position: relative; width: 16.666666%; height: 100%; overflow: hidden; flex-shrink: 0; }
-.story-page::before {
-  content: ""; position: absolute; inset: 12px; border: 1px solid rgba(255,255,255,.72); border-radius: 20px; pointer-events: none; z-index: 30;
-}
-
-.lock-page {
-  overflow: hidden;
-}
-
-.lock-card {
-  width: min(88%, 430px);
-  max-height: calc(100vh - 110px);
-  overflow: hidden;
-}
-
-.passcode-label { margin: 13px 0 8px; font-weight: 700; }
-.passcode-row { display: grid; gap: 9px; }
-.passcode-row {
-  width: 100%;
-  max-width: 330px;
-  margin: 0 auto;
-  grid-template-columns: minmax(118px, 1fr) minmax(150px, 1fr);
-  align-items: center;
-}
-.passcode-row input {
-  width: 100%;
-  min-width: 0;
-  padding: 0 8px;
-  letter-spacing: 10px;
-}
-.passcode-row .primary-button {
-  width: 100%;
-  min-width: 0;
-  white-space: nowrap;
-}
-
-.lock-message {
-  max-width: 330px;
-  margin-inline: auto;
-}
-
-.story { display: flex; width: 600%; height: 100%; transition: transform 1.05s cubic-bezier(.72, 0, .18, 1); }
-.story[data-page="1"] { transform: translateX(-16.666666%); }
-.story[data-page="2"] { transform: translateX(-33.333333%); }
-.story[data-page="3"] { transform: translateX(-50%); }
-.story[data-page="4"] { transform: translateX(-66.666666%); }
-.story[data-page="5"] { transform: translateX(-83.333333%); }
-.story-page { position: relative; width: 16.666666%; height: 100%; overflow: hidden; flex-shrink: 0; }
-.story-page::before {
-  content: ""; position: absolute; inset: 12px; border: 1px solid rgba(255,255,255,.72); border-radius: 20px; pointer-events: none; z-index: 30;
-}
-
-.lock-page {
-  overflow: hidden;
-}
-
-.lock-card {
-  width: min(88%, 430px);
-  max-height: calc(100vh - 110px);
-  overflow: hidden;
-}
-
-.passcode-label { margin: 13px 0 8px; font-weight: 700; }
-.passcode-row { display: grid; gap: 9px; }
-.passcode-row {
-  width: 100%;
-  max-width: 330px;
-  margin: 0 auto;
-  grid-template-columns: minmax(118px, 1fr) minmax(150px, 1fr);
-  align-items: center;
-}
-.passcode-row input {
-  width: 100%;
-  min-width: 0;
-  padding: 0 8px;
-  letter-spacing: 10px;
-}
-.passcode-row .primary-button {
-  width: 100%;
-  min-width: 0;
-  white-space: nowrap;
-}
-
-.lock-message {
-  max-width: 330px;
-  margin-inline: auto;
-}
-
-.quiz-card,
-.quiz-result {
-  height: min(390px, calc(100vh - 230px));
-  min-height: 330px;
-  margin: 0 auto;
-  box-sizing: border-box;
-}
-
-.quiz-result {
-  min-height: 330px;
-  max-height: calc(100vh - 230px);
-  padding: 20px 30px;
-}
-
-.quiz-result h2,
-.quiz-score,
-.result-message,
-.result-buttons {
-  margin-block: 6px;
-}
-
-.result-heart {
-  font-size: 58px;
-}
-
-.result-message {
-  line-height: 1.42;
-}
-
-.final-layout {
-  height: 100%;
-  align-items: center;
-  padding-block: 24px 74px;
-}
-
-.final-polaroid img {
-  height: min(58vh, 540px);
-  max-height: none;
-}
-
-.final-letter {
-  max-height: calc(100vh - 130px);
-  overflow-y: auto;
-}
-
-@media (max-width: 900px) {
-  .monthsary-grid { grid-template-columns:1fr 1.25fr; height:auto; }
-  .polaroid-left { display:none; } .polaroid-right { height:390px; } .polaroid-right img{height:330px}
-  .love-letter { min-height:390px; }
-  .reasons-layout,.final-layout { grid-template-columns:.75fr 1.25fr; gap:16px; }
-  .big-polaroid img,.final-polaroid img { height:55vh; }
-  .music-player { width:290px; }
-}
-@media (max-width: 650px) {
-  /* FINAL RESPONSIVE REBUILD — one-screen fit with internal scrolling where needed */
-[hidden] { display: none !important; }
-html, body { width: 100%; height: 100%; overflow: hidden; }
-.story, .story-page { height: 100svh; min-height: 100svh; }
-.story-page { overflow-x: hidden; overflow-y: auto; overscroll-behavior: contain; }
-.page-shell { min-height: 100%; height: auto; }
-
-.lock-page { display: grid; place-items: center; padding: 18px 12px; }
-.lock-card {
-  width: min(88vw, 430px);
-  max-height: calc(100svh - 36px);
-  overflow: hidden;
-  padding: 26px 32px 22px;
-}
-.passcode-row {
-  width: 100%;
-  max-width: 330px;
-  margin: 0 auto;
-  grid-template-columns: 118px minmax(150px, 1fr);
-  gap: 9px;
-}
-.passcode-row input,
-.passcode-row .primary-button { min-width: 0; }
-.passcode-row input { width: 118px; padding: 0 8px; letter-spacing: 8px; }
-.passcode-row .primary-button { width: 100%; padding-inline: 12px; white-space: nowrap; }
-.lock-message { max-width: 330px; margin-inline: auto; }
-.envelope { flex-shrink: 0; }
-
-.game-layout {
-  grid-template-rows: auto minmax(0, 1fr);
-  align-content: center;
-  padding-block: 18px 78px;
-}
-.game-heading { margin-bottom: 6px; }
-.quiz-card, .quiz-result {
-  width: min(92%, 650px);
-  height: auto;
-  min-height: 0;
-  max-height: calc(100svh - 230px);
-  justify-self: center;
-  align-self: center;
-  margin: 0 auto;
-  overflow-y: auto;
-  padding: 22px 30px;
-}
-.quiz-result { display: grid; place-items: center; align-content: center; }
-.quiz-question { min-height: 44px; margin: 2px 0 8px; }
-.quiz-feedback { min-height: 22px; margin: 7px 0 3px; }
-.result-heart { font-size: 52px; }
-.result-message { margin-bottom: 10px; line-height: 1.42; }
-
-.final-layout { align-items: center; height: 100%; padding-block: 20px 70px; }
-.final-letter { max-height: calc(100svh - 120px); overflow-y: auto; }
-
-@media (max-width: 650px) {
-  .lock-page { padding: 14px 10px 72px; }
-  .lock-card { width: min(92vw, 390px); max-height: calc(100svh - 86px); padding: 20px 14px 16px; }
-  .lock-card h1 { font-size: 28px; margin: 2px 0 4px; }
-  .script-line { font-size: 21px; }
-  .intro { margin-bottom: 6px; }
-  .envelope { width: 150px; height: 92px; margin-block: 4px 6px; }
-  .passcode-label { margin: 6px 0 5px; }
-  .passcode-row { max-width: 300px; grid-template-columns: 112px minmax(0, 1fr); gap: 7px; }
-  .passcode-row input { width: 112px; height: 48px; font-size: 19px; }
-  .passcode-row .primary-button { height: 48px; padding-inline: 7px; font-size: 13px; }
-  .lock-message { min-height: 17px; margin-top: 4px; }
-
-  .game-layout { height: 100%; overflow-y: auto; padding: 42px 12px 78px; }
-  .game-heading { margin-bottom: 8px; }
-  .game-heading h1 { font-size: 30px; }
-  .quiz-card, .quiz-result { width: 94%; max-height: none; min-height: 330px; padding: 18px 14px; }
-  .quiz-answers { grid-template-columns: 1fr; gap: 7px; }
-  .quiz-answer { min-height: 44px; }
-  .quiz-question { min-height: 58px; }
-
-  .final-layout { display: block; height: 100%; overflow-y: auto; padding: 18px 14px 82px; }
-  .final-polaroid { width: 180px; margin: 0 auto 10px; }
-  .final-polaroid img { height: 180px; }
-  .final-letter { max-height: none; overflow: visible; padding: 20px 16px; }
-
-  .music-player { bottom: 54px; }
-  .page-indicator { bottom: 8px; }
-}
-
-@media (max-height: 700px) {
-  .lock-card { padding-block: 16px; }
-  .script-line { margin-top: 0; }
-  .intro { display: none; }
-  .envelope { height: 82px; }
-}
-
-/* Alignment repair — restore the original centered scrapbook layout */
-body {
-  text-align: left;
-}
-
-.lock-page {
-  display: grid !important;
-  place-items: center !important;
-  width: 16.666666% !important;
-  height: 100svh !important;
-  padding: 24px 12px !important;
-  text-align: center !important;
-}
-
-.lock-card {
-  width: min(430px, calc(100vw - 36px)) !important;
-  max-height: calc(100svh - 48px) !important;
-  margin: 0 auto !important;
-  padding: 28px 34px 24px !important;
-  overflow: hidden !important;
-  text-align: center !important;
-}
-
-.lock-card > * {
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
-.passcode-row {
-  width: min(330px, 100%) !important;
-  margin: 0 auto !important;
-  justify-content: center !important;
-  align-items: center !important;
-}
-
-.success-overlay {
-  position: absolute !important;
-  inset: 0 !important;
-  z-index: 200 !important;
-  display: grid !important;
-  place-content: center !important;
-  text-align: center !important;
-  opacity: 0 !important;
-  visibility: hidden !important;
-  pointer-events: none !important;
-}
-
-.success-overlay.show {
-  opacity: 1 !important;
-  visibility: visible !important;
-  pointer-events: auto !important;
-}
-
-.quiz-card,
-.quiz-result,
-.page-shell,
-.game-heading,
-.final-letter,
-.reasons-paper {
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
-.quiz-card,
-.quiz-result,
-.game-heading,
-.final-letter,
-.reasons-paper {
-  text-align: center;
-}
-
-@media (max-width: 650px) {
-  .lock-page {
-    padding: 12px 10px 66px !important;
-  }
-
-  .lock-card {
-    width: min(390px, calc(100vw - 28px)) !important;
-    max-height: calc(100svh - 78px) !important;
-    padding: 18px 14px 14px !important;
-  }
-
-  .passcode-row {
-    width: min(300px, 100%) !important;
-  }
-}
-
-/* Complete website consolidation */
-html, body { width: 100%; height: 100%; overflow: hidden; }
-.story, .story-page { height: 100svh; min-height: 100svh; }
-.story-page { overflow-x: hidden; overflow-y: auto; overscroll-behavior: contain; }
-.page-shell { min-height: 100%; height: auto; overflow: visible; }
+button { touch-action: manipulation; }
+img { max-width: 100%; }
 [hidden] { display: none !important; }
 
-.lock-page { display: grid !important; place-items: center !important; padding: 20px 12px 74px !important; }
-.lock-card { width: min(430px, calc(100vw - 32px)) !important; max-height: calc(100svh - 100px) !important; margin: auto !important; overflow: hidden !important; text-align: center !important; }
-.passcode-row { width: min(330px, 100%) !important; margin: 0 auto !important; grid-template-columns: 118px minmax(0, 1fr) !important; }
-.passcode-row input { width: 118px !important; min-width: 0; }
-.passcode-row .primary-button { width: 100%; min-width: 0; white-space: nowrap; }
-.success-overlay { display: grid !important; place-content: center !important; opacity: 0; visibility: hidden; }
-.success-overlay.show { opacity: 1; visibility: visible; }
+.story, .story-page { height: 100svh; min-height: 100svh; }
+.story-page { width: 16.666666%; overflow-x: hidden; overflow-y: auto; overscroll-behavior: contain; }
+.page-shell { width: min(94%, 1120px); min-height: 100%; height: auto; margin: 0 auto; overflow: visible; }
+
+.lock-page { display: grid !important; place-items: center !important; overflow: hidden; padding: 18px 12px 70px; text-align: center; }
+.lock-card { width: min(430px, calc(100vw - 28px)); max-height: calc(100svh - 90px); margin: 0 auto; overflow: hidden; text-align: center; }
+.lock-card > * { margin-left: auto; margin-right: auto; }
+.passcode-row { width: min(330px, 100%); margin: 0 auto; grid-template-columns: 118px minmax(0, 1fr); align-items: center; }
+.passcode-row input { width: 118px; height: 54px; min-width: 0; padding: 0 8px; }
+.passcode-row .primary-button { width: 100%; min-width: 0; height: 54px; padding: 0 12px; white-space: nowrap; }
+.lock-message { max-width: 330px; }
+.success-overlay { position: absolute; inset: 0; z-index: 200; display: grid; place-content: center; text-align: center; opacity: 0; visibility: hidden; pointer-events: none; }
+.success-overlay.show { opacity: 1; visibility: visible; pointer-events: auto; }
 
 .page-heading, .game-heading, .gifts-heading { text-align: center; }
-.game-layout { grid-template-rows: auto minmax(0, 1fr) !important; align-content: center; padding-block: 20px 78px; }
-.quiz-card, .quiz-result { width: min(650px, 92%) !important; height: auto !important; min-height: 330px; max-height: calc(100svh - 220px); margin: 0 auto !important; overflow-y: auto; }
+.monthsary-grid, .reasons-layout, .gifts-layout, .game-layout, .final-layout { min-height: 0; }
+
+.game-layout { grid-template-rows: auto minmax(0, 1fr); align-content: center; padding-block: 20px 78px; }
+.quiz-card, .quiz-result { width: min(650px, 92%); height: auto; min-height: 330px; max-height: calc(100svh - 230px); margin: 0 auto; overflow-y: auto; }
 .quiz-result { display: grid; place-items: center; align-content: center; }
+.quiz-answer { min-height: 52px; }
 .quiz-question { min-height: 44px; }
 .quiz-feedback { min-height: 22px; }
 
@@ -368,44 +36,73 @@ html, body { width: 100%; height: 100%; overflow: hidden; }
 .final-letter { max-height: calc(100svh - 120px); margin: 0 auto; overflow-y: auto; }
 
 .music-player { z-index: 90; }
-.album-art img { object-fit: cover; }
+.album-art img { width: 100%; height: 100%; object-fit: cover; }
+.page-indicator { z-index: 100; }
+
+@media (max-width: 900px) {
+  .monthsary-grid { grid-template-columns: 1fr 1.25fr; }
+  .polaroid-left { display: none; }
+  .reasons-layout, .final-layout { grid-template-columns: .75fr 1.25fr; }
+}
 
 @media (max-width: 650px) {
-  .lock-page { padding: 10px 10px 64px !important; }
-  .lock-card { width: min(390px, calc(100vw - 24px)) !important; max-height: calc(100svh - 82px) !important; padding: 18px 14px 14px !important; }
-  .lock-card h1 { font-size: 28px !important; }
-  .intro { margin-bottom: 6px; }
+  .story, .story-page { height: 100svh; min-height: 100svh; }
+  .story-page { overflow-y: auto; }
+  .page-shell { width: 100%; padding: 20px 12px calc(var(--safe-bottom) + env(safe-area-inset-bottom)); }
+
+  .lock-page { padding: 10px 10px 70px; }
+  .lock-card { width: min(390px, calc(100vw - 24px)); max-height: calc(100svh - 86px); padding: 18px 14px 14px; }
+  .lock-card h1 { font-size: 28px; margin-bottom: 6px; }
   .script-line { font-size: 21px; }
-  .envelope { width: 150px; height: 92px; margin-block: 4px 6px; }
+  .intro { display: block; margin-bottom: 6px; }
+  .envelope { width: 150px; height: 92px; margin: 4px auto 6px; }
   .passcode-label { margin: 6px 0 5px; }
-  .passcode-row { width: min(300px, 100%) !important; grid-template-columns: 112px minmax(0, 1fr) !important; gap: 7px; }
-  .passcode-row input { width: 112px !important; height: 48px; font-size: 19px; }
-  .passcode-row .primary-button { height: 48px; padding-inline: 7px; font-size: 13px; }
+  .passcode-row { width: min(300px, 100%); grid-template-columns: 112px minmax(0, 1fr); gap: 7px; }
+  .passcode-row input { width: 112px; height: 48px; font-size: 19px; }
+  .passcode-row .primary-button { height: 48px; padding: 0 7px; font-size: 13px; }
+  .lock-message { min-height: 17px; margin-top: 4px; }
 
-  .page-shell { padding: 18px 12px 76px; }
-  .monthsary-grid { grid-template-columns: 1fr 1fr; height: auto; margin-top: 0; }
-  .love-letter { grid-column: 1 / -1; }
+  .page-heading { position: relative; top: auto; margin-bottom: 8px; }
+  .page-heading h1 { font-size: 28px; }
+  .monthsary-grid { height: auto; margin-top: 0; grid-template-columns: 1fr 1fr; gap: 8px; align-items: start; }
+  .polaroid-left, .polaroid-right { display: block; }
+  .polaroid { padding: 7px 7px 28px; }
+  .polaroid img { height: 210px; }
+  .love-letter { grid-column: 1 / -1; min-height: auto; padding: 20px 16px; }
+  .letter-text { font-size: 12px; }
 
-  .reasons-layout, .gifts-layout, .final-layout { display: block; overflow-y: auto; }
+  .reasons-layout, .gifts-layout, .final-layout { display: block; height: auto; overflow-y: visible; }
   .reasons-photo { margin-bottom: 8px; }
-  .reasons-paper { max-height: none; }
-  .big-polaroid, .final-polaroid { width: 180px; margin-inline: auto; }
+  .big-polaroid, .final-polaroid { width: 180px; margin: 0 auto 10px; }
   .big-polaroid img, .final-polaroid img { height: 180px; }
+  .reasons-paper, .final-letter { max-height: none; overflow: visible; }
+
+  .gifts-layout { padding-top: 32px; }
+  .gifts-polaroid { width: min(82%, 300px); margin: 0 auto 12px; }
+  .gifts-polaroid img { height: 270px; }
+  .gift-copy { height: auto; max-height: none; }
 
   .game-layout { height: 100%; overflow-y: auto; padding: 42px 12px 78px; }
   .game-heading h1 { font-size: 30px; }
-  .quiz-card, .quiz-result { width: 94% !important; max-height: none; min-height: 330px; padding: 18px 14px; }
-  .quiz-answers { grid-template-columns: 1fr; }
+  .quiz-card, .quiz-result { width: 94%; max-height: none; min-height: 330px; padding: 18px 14px; }
+  .quiz-answers { grid-template-columns: 1fr; gap: 7px; }
   .quiz-answer { min-height: 44px; }
+  .quiz-question { min-height: 58px; }
+  .result-message { font-size: 12px; }
 
-  .final-layout { height: 100%; padding: 18px 12px 82px; }
-  .final-letter { max-height: none; overflow: visible; }
+  .final-layout { height: 100%; overflow-y: auto; padding: 18px 12px 82px; }
+  .final-letter { padding: 20px 16px; }
 
-  .music-player { left: 12px; right: 12px; bottom: 54px; width: auto; transform: none; }
+  .music-player { left: 12px; right: 12px; bottom: calc(54px + env(safe-area-inset-bottom)); width: auto; height: 52px; transform: none; }
+  .page-indicator { bottom: calc(8px + env(safe-area-inset-bottom)); }
 }
 
 @media (max-height: 700px) {
-  .lock-card { padding-block: 14px !important; }
+  .lock-card { padding-block: 14px; }
   .intro { display: none; }
   .envelope { height: 82px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
