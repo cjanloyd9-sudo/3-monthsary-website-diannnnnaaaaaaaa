@@ -9,15 +9,11 @@ const successOverlay = document.getElementById("successOverlay");
 const indicatorDots = [...document.querySelectorAll(".indicator-dot")];
 
 function setPage(pageNumber) {
-  const target = Math.max(0, Math.min(5, Number(pageNumber) || 0));
-  story.dataset.page = String(target);
-  indicatorDots.forEach((dot, index) => {
-    dot.classList.toggle("active", index === target);
-    dot.setAttribute("aria-current", index === target ? "step" : "false");
-  });
+  story.dataset.page = String(pageNumber);
+  indicatorDots.forEach((dot, index) => dot.classList.toggle("active", index === pageNumber));
   document.querySelectorAll(".story-page").forEach((page, index) => {
-    page.classList.toggle("active", index === target);
-    if (index === target) {
+    page.classList.toggle("active", index === pageNumber);
+    if (index === pageNumber) {
       page.scrollTop = 0;
       const shell = page.querySelector(".page-shell");
       if (shell) shell.scrollTop = 0;
@@ -196,6 +192,10 @@ document.getElementById("restartButton").addEventListener("click", () => {
   lockMessage.textContent = "";
   closePopup();
   resetQuiz();
+  openFinalEnvelope?.classList.remove("opened");
+  openFinalEnvelope?.setAttribute("aria-expanded", "false");
+  finalLetter?.classList.remove("opened");
+  finalLetter?.classList.add("sealed");
   setPage(0);
   window.setTimeout(() => passcode.focus(), 100);
 });
@@ -332,6 +332,18 @@ function resetQuiz() {
   quizProgress.style.width = "0";
   renderQuizQuestion();
 }
+
+// Final envelope opening and restart reset.
+const openFinalEnvelope = document.getElementById("openFinalEnvelope");
+const finalLetter = document.getElementById("finalLetter");
+
+openFinalEnvelope?.addEventListener("click", () => {
+  openFinalEnvelope.classList.add("opened");
+  openFinalEnvelope.setAttribute("aria-expanded", "true");
+  finalLetter?.classList.remove("sealed");
+  finalLetter?.classList.add("opened");
+  finalLetter?.focus?.();
+});
 
 document.getElementById("playAgain").addEventListener("click", resetQuiz);
 document.getElementById("continueStory").addEventListener("click", () => setPage(5));
