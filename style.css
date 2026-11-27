@@ -27,6 +27,7 @@ button { cursor: pointer; touch-action: manipulation; }
 img { display: block; max-width: 100%; }
 [hidden] { display: none !important; }
 
+/* Horizontal page system + mobile fit repair */
 .story {
   display: flex;
   width: 600%;
@@ -38,14 +39,14 @@ img { display: block; max-width: 100%; }
 .story[data-page="3"] { transform: translateX(-50%); }
 .story[data-page="4"] { transform: translateX(-66.6666667%); }
 .story[data-page="5"] { transform: translateX(-83.3333333%); }
-
 .story-page {
-  position: relative;
   width: 16.6666667%;
   height: 100svh;
   flex: 0 0 16.6666667%;
+  position: relative;
   overflow: hidden;
 }
+
 .story-page::after {
   content: "";
   position: absolute;
@@ -280,17 +281,28 @@ img { display: block; max-width: 100%; }
 
 @media (max-width: 650px) {
   body { overflow:hidden; }
-  .story-page { overflow-y:auto; }
+  .story-page { overflow-x: hidden; overflow-y: auto; }
   .story-page::after { inset:6px; border-radius:14px; }
   .page-shell { width:100%; height:auto; min-height:100%; padding:18px 12px calc(126px + env(safe-area-inset-bottom)); }
 
+  .lock-page { display: grid !important; place-items: center !important; width: 16.6666667%; height: 100svh; padding: 12px 10px 70px !important; }
+  .lock-card {
+    width: calc(100vw - 28px) !important;
+    max-width: 390px;
+    max-height: calc(100svh - 100px) !important;
+    margin: 0 auto !important;
+  }
   .lock-card { width:min(390px,calc(100vw - 24px)); max-height:calc(100svh - 78px); padding:18px 14px 14px; }
   .lock-card h1 { font-size:28px; }
   .script-line { font-size:21px; }
   .intro { display:none; }
   .envelope { width:150px; height:92px; margin:4px auto 6px; }
   .passcode-label { margin:6px 0 5px; }
-  .passcode-row { width:min(300px,100%); grid-template-columns:112px minmax(0,1fr); gap:7px; }
+  .passcode-row {
+    width: min(300px, 100%) !important;
+    margin-inline: auto !important;
+  }
+  .passcode-row { width: 118px; height: 54px; border: 1px solid #dfa5ba; border-radius: 14px; background: #fffafd; color: var(--burgundy); text-align: center; font-size: 24px; letter-spacing: 10px; outline: none; }
   .passcode-row input { width:112px; height:48px; font-size:19px; }
   .passcode-row .primary-button { height:48px; padding:0 7px; font-size:13px; }
 
