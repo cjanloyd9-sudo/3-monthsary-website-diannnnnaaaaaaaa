@@ -9,10 +9,19 @@ const successOverlay = document.getElementById("successOverlay");
 const indicatorDots = [...document.querySelectorAll(".indicator-dot")];
 
 function setPage(pageNumber) {
-  story.dataset.page = String(pageNumber);
-  indicatorDots.forEach((dot, index) => dot.classList.toggle("active", index === pageNumber));
+  const target = Math.max(0, Math.min(5, Number(pageNumber) || 0));
+  story.dataset.page = String(target);
+  indicatorDots.forEach((dot, index) => {
+    dot.classList.toggle("active", index === target);
+    dot.setAttribute("aria-current", index === target ? "step" : "false");
+  });
   document.querySelectorAll(".story-page").forEach((page, index) => {
-    page.classList.toggle("active", index === pageNumber);
+    page.classList.toggle("active", index === target);
+    if (index === target) {
+      page.scrollTop = 0;
+      const shell = page.querySelector(".page-shell");
+      if (shell) shell.scrollTop = 0;
+    }
   });
 }
 
