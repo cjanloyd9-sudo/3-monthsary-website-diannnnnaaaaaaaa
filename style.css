@@ -225,7 +225,9 @@ img { display: block; max-width: 100%; }
 .final-polaroid { width:min(100%,430px); transform:rotate(4deg); }
 .final-polaroid img { height:min(62vh,610px); object-fit:contain; background:#fffdf8; }
 .final-letter { max-height:82vh; padding:38px 44px 28px; border:2px solid #d998ad; border-radius:22px 8px 22px 8px; text-align:center; overflow-y:auto; }
-.final-letter .letter-script { font-size:48px; }
+.final-letter .letter-script { margin-top: -8px; }
+.final-letter .final-subtitle { margin: 0 0 8px; }
+.final-letter .letter-text { margin: 8px 0 14px; }
 .final-subtitle { margin:0 0 14px; color:#ad4d72; }
 .final-buttons { display:flex; justify-content:center; gap:10px; flex-wrap:wrap; }
 
