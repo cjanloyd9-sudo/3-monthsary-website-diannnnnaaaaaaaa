@@ -279,10 +279,11 @@ img { display: block; max-width: 100%; }
 @keyframes shake { 25%{transform:translateX(-7px)} 50%{transform:translateX(7px)} 75%{transform:translateX(-4px)} }
 
 @media (max-width: 900px) {
-  .monthsary-grid { grid-template-columns:1fr 1.25fr; }
-  .polaroid-left { display:none; }
-  .reasons-layout,.final-layout { grid-template-columns:.75fr 1.25fr; gap:16px; }
-  .music-player { width:290px; }
+  .monthsary-grid {
+    grid-template-columns: 1fr 1.25fr;
+  }
+  .polaroid-left { display: block; }
+  .polaroid-right { display: block; }
 }
 
 @media (max-width: 650px) {
@@ -440,4 +441,67 @@ img { display: block; max-width: 100%; }
   .entrance-photo-wrap { width: 220px; }
   .entrance-photo { height: 150px; }
   .lock-card { max-height: calc(100svh - 225px) !important; }
+}
+
+/* Page 2 memory photo positioning */
+.monthsary-grid {
+  grid-template-columns: minmax(170px,.9fr) minmax(280px,1.35fr) minmax(170px,.9fr);
+  gap: clamp(10px, 2vw, 24px);
+  align-items: center;
+  justify-items: center;
+}
+.polaroid-left,
+.polaroid-right {
+  position: relative;
+  width: min(100%, 220px);
+  margin: 0 auto;
+  padding: 8px 8px 38px;
+}
+.polaroid-left { transform: rotate(-3deg) translateX(8px); }
+.polaroid-right { transform: rotate(3deg) translateX(-8px); }
+.polaroid-left img,
+.polaroid-right img {
+  height: min(44vh, 350px);
+  object-fit: cover;
+}
+.polaroid-left figcaption,
+.polaroid-right figcaption,
+.polaroid figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 6px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  font-family: "Sacramento", cursive;
+  font-size: 21px;
+  line-height: 1;
+  color: #9d4d69;
+}
+
+@media (max-width: 900px) {
+  .monthsary-grid {
+    grid-template-columns: 1fr 1.25fr;
+  }
+  .polaroid-left { display: block; }
+  .polaroid-right { display: block; }
+}
+
+@media (max-width: 650px) {
+  .monthsary-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 8px;
+  }
+  .polaroid-left,
+  .polaroid-right {
+    width: 100%;
+    max-width: 170px;
+  }
+  .polaroid-left { transform: rotate(-2deg); }
+  .polaroid-right { transform: rotate(2deg); }
+  .polaroid-left img,
+  .polaroid-right img { height: 150px; }
+  .polaroid-left figcaption,
+  .polaroid-right figcaption { font-size: 18px; }
 }
