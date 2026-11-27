@@ -30,7 +30,8 @@ img { display: block; max-width: 100%; }
 /* Horizontal page system + mobile fit repair */
 .story {
   display: flex;
-  width: 600%;
+  width: 600vw !important;
+  max-width: none !important;
   height: 100svh;
   transition: transform .9s cubic-bezier(.65, 0, .35, 1);
 }
@@ -40,9 +41,10 @@ img { display: block; max-width: 100%; }
 .story[data-page="4"] { transform: translateX(-66.6666667%); }
 .story[data-page="5"] { transform: translateX(-83.3333333%); }
 .story-page {
-  width: 16.6666667%;
+  width: 100vw !important;
+  max-width: 100vw !important;
+  flex: 0 0 100vw !important;
   height: 100svh;
-  flex: 0 0 16.6666667%;
   position: relative;
   overflow: hidden;
 }
