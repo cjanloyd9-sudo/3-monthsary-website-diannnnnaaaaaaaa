@@ -18,8 +18,20 @@ function setPage(pageNumber) {
 
 lockForm.addEventListener("submit", (event) => {
   event.preventDefault();
-  if (passcode.value === SECRET_PASSCODE) {
+
+  const enteredPasscode = passcode.value.trim();
+  if (enteredPasscode.length !== 4) {
+    lockMessage.textContent = "Please enter all 4 digits baby ♡";
+    passcode.classList.add("shake");
+    window.setTimeout(() => passcode.classList.remove("shake"), 420);
+    passcode.focus();
+    return;
+  }
+
+  if (enteredPasscode === SECRET_PASSCODE) {
     lockMessage.textContent = "";
+    passcode.setAttribute("aria-invalid", "false");
+    lockForm.querySelector("button").disabled = true;
     successOverlay.classList.add("show");
     successOverlay.setAttribute("aria-hidden", "false");
     window.setTimeout(() => {
@@ -29,14 +41,21 @@ lockForm.addEventListener("submit", (event) => {
     }, 2000);
   } else {
     lockMessage.textContent = "Oopsie! Wrong passcode, try again baby ♡";
+    passcode.setAttribute("aria-invalid", "true");
+    passcode.classList.add("shake");
+    window.setTimeout(() => passcode.classList.remove("shake"), 420);
     passcode.value = "";
     passcode.focus();
   }
 });
 
 passcode.addEventListener("input", () => {
-  passcode.value = passcode.value.replace(/[^0-9]/g, "");
+  passcode.value = passcode.value.replace(/[^0-9]/g, "").slice(0, 4);
+  passcode.removeAttribute("aria-invalid");
+  if (lockMessage.textContent) lockMessage.textContent = "";
 });
+
+window.addEventListener("load", () => passcode.focus());
 
 document.querySelectorAll("[data-go]").forEach((button) => {
   button.addEventListener("click", () => setPage(Number(button.dataset.go)));
@@ -163,10 +182,13 @@ lovePopup.addEventListener("click", (event) => {
 // Restart the entire story.
 document.getElementById("restartButton").addEventListener("click", () => {
   passcode.value = "";
+  passcode.removeAttribute("aria-invalid");
+  lockForm.querySelector("button").disabled = false;
   lockMessage.textContent = "";
   closePopup();
   resetQuiz();
   setPage(0);
+  window.setTimeout(() => passcode.focus(), 100);
 });
 
 // Five-question anniversary quiz.

@@ -53,10 +53,13 @@ button { cursor: pointer; }
 .passcode-row { display: grid; gap: 9px; }
 .passcode-row input { height: 54px; border: 1px solid #dfa5ba; border-radius: 14px; background: #fffafd; color: var(--burgundy); text-align: center; font-size: 24px; letter-spacing: 12px; outline: none; }
 .passcode-row input:focus { box-shadow: 0 0 0 4px rgba(232,137,170,.18); }
+.passcode-row input[aria-invalid="true"] { border-color: #b64f70; background: #fff4f7; }
+.passcode-row input.shake { animation: shake .42s ease; }
 .primary-button, .soft-button { border: 0; border-radius: 999px; color: white; background: linear-gradient(135deg, #b85b82, #df7d9e); box-shadow: 0 10px 22px rgba(173,83,119,.24); font-weight: 700; transition: .25s ease; }
 .primary-button { height: 50px; padding: 0 20px; }
 .primary-button:hover, .soft-button:hover { transform: translateY(-3px) scale(1.03); box-shadow: 0 15px 28px rgba(173,83,119,.30); }
 .primary-button:active, .soft-button:active { transform: scale(.96); }
+.primary-button:disabled { cursor: default; opacity: .65; transform: none; }
 .lock-message { min-height: 20px; margin: 8px 0 0; color: #a83f62; font-size: 13px; }
 .envelope { position: relative; width: 180px; height: 112px; margin: 8px auto 10px; border-radius: 8px; background: #edc2d1; box-shadow: 0 12px 24px rgba(126,62,86,.16); cursor: pointer; }
 .envelope-letter {
@@ -149,6 +152,7 @@ button { cursor: pointer; }
 @keyframes heartbeat { 0%,100%{transform:scale(1)} 30%{transform:scale(1.18)} 55%{transform:scale(.94)} }
 @keyframes floatHeart { to { transform:translateY(-110vh) rotate(360deg); opacity:0; } }
 @keyframes floatDecor { 50%{transform:translateY(-18px) rotate(12deg)} }
+@keyframes shake { 0%,100% { transform: translateX(0); } 25% { transform: translateX(-7px); } 50% { transform: translateX(7px); } 75% { transform: translateX(-4px); } }
 
 @media (max-width: 900px) {
   .monthsary-grid { grid-template-columns:1fr 1.25fr; height:auto; }
