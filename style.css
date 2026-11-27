@@ -790,538 +790,93 @@ button { cursor: pointer; }
   .music-player { width:290px; }
 }
 @media (max-width: 650px) {
-  html,body { overflow:hidden; }
-  .story-page::before { inset:6px; border-radius:14px; }
-  .lock-card { padding:28px 20px 22px; }
-  .lock-card h1 { font-size:30px; }
-  .page-shell { overflow-y:auto; padding:20px 14px 70px; }
-  .page-heading { position:relative; top:auto; margin-bottom:12px; }
-  .page-heading h1 { font-size:28px; }
-  .monthsary-grid { height:auto; margin-top:0; grid-template-columns:1fr 1fr; gap:8px; align-items:start; }
-  .polaroid-left,.polaroid-right { display:block; } .polaroid { padding:7px 7px 28px; } .polaroid img { height:210px; }
-  .love-letter { grid-column:1/3; grid-row:2; min-height:auto; padding:22px 18px 18px; }
-  .letter-text { font-size:12px; }
-  .reasons-layout,.final-layout { display:block; overflow-y:auto; }
-  .reasons-photo { margin:0 0 10px; }.big-polaroid { width:220px;margin:auto }.big-polaroid img{height:220px}
-  .reasons-paper { max-height:none; padding:18px 16px; }
-  .reasons-list li { font-size:11px; min-height:31px; }
-  .final-polaroid { width:220px;margin:0 auto 12px }.final-polaroid img{height:220px}
-  .final-letter { max-height:none; padding:22px 18px; }
-  .final-letter .letter-script{font-size:34px}
-  .music-player { left:50%; right:auto; bottom:54px; width:290px; height:52px; transform:translateX(-50%); }
-  .album-art { width:36px;height:36px }.song-info{width:65px}.progress{width:55px}.volume{width:38px}
-  .page-indicator { bottom:8px; }
-
-  .gifts-page {
-    background:
-      radial-gradient(circle at 12% 18%, rgba(255,255,255,.52) 0 2px, transparent 3px),
-      linear-gradient(135deg, #f8dce7, #dfaebe);
-  }
-
-  .gifts-layout {
-    display: block;
-    overflow-y: auto;
-    padding: 44px 14px 80px;
-  }
-
-  .gifts-heading {
-    margin-bottom: 10px;
-  }
-
-  .gifts-heading h1 { font-size: 36px; }
-  .gifts-heading p:last-child { font-size: 12px; }
-
-  .gifts-polaroid {
-    width: min(82%, 310px);
-    margin: 0 auto 12px;
-  }
-
-  .gifts-polaroid img { height: 270px; }
-
-  .gift-copy {
-    height: auto;
-    max-height: none;
-  }
-
-  .gift-letter {
-    margin-bottom: 8px;
-  }
-
-  .gift-letter p { font-size: 12px; }
-}
-
-.gifts-page {
-  background:
-    radial-gradient(circle at 12% 18%, rgba(255,255,255,.52) 0 2px, transparent 3px),
-    linear-gradient(135deg, #f8dce7, #dfaebe);
-}
-
-.gifts-layout {
-  grid-template-columns: minmax(390px, 1.05fr) minmax(300px, .95fr);
-  grid-template-rows: auto 1fr;
-  gap: 14px 24px;
-  align-items: center;
-  padding-top: 20px;
-}
-
-.gifts-heading {
-  grid-column: 1 / 3;
-  grid-row: 1;
-  text-align: center;
-}
-
-.gifts-heading h1 {
-  margin: 2px 0 3px;
-  color: #873a58;
-  font-family: "Sacramento", cursive;
-  font-size: clamp(38px, 5vw, 58px);
-  line-height: 1;
-}
-
-.gifts-heading p:last-child {
-  margin: 4px 0 0;
-  color: #9d4d69;
-}
-
-.gift-copy {
-  grid-column: 1;
-  grid-row: 2;
-  height: 68vh;
-  max-height: 620px;
-  display: grid;
-  grid-template-rows: 1fr 1fr auto auto;
-  gap: 9px;
-  align-items: center;
-}
-
-.gift-photo-card {
-  grid-column: 2;
-  grid-row: 2;
-  position: relative;
-  display: grid;
-  place-items: center;
-}
-
-.gifts-polaroid {
-  width: min(92%, 460px);
-  transform: rotate(2deg);
-  z-index: 3;
-}
-
-.gifts-polaroid img {
-  height: min(58vh, 540px);
-  object-fit: contain;
-  background: #fffaf3;
-}
-
-.gift-ribbon {
-  position: absolute;
-  z-index: 4;
-  width: 85px;
-  height: 28px;
-  background: #c95f82;
-  border: 3px solid #fff4f7;
-  box-shadow: 0 5px 12px rgba(126,62,86,.18);
-}
-
-.ribbon-left { left: 0; top: 10%; transform: rotate(-28deg); }
-.ribbon-right { right: 2%; top: 18%; transform: rotate(32deg); }
-
-.gift-letter {
-  position: relative;
-  padding: 14px 18px;
-  border: 2px solid #dea0b4;
-  border-radius: 14px 28px 14px 28px;
-  background:
-    linear-gradient(rgba(255,250,243,.94), rgba(255,250,243,.94)),
-    url("images/download (24).jpg") center/cover;
-}
-
-.gift-letter h2 {
-  margin: 0 0 5px;
-  color: #9d4d69;
-  font-family: "Sacramento", cursive;
-  font-size: clamp(24px, 2.5vw, 34px);
-  line-height: 1;
-}
-
-.gift-letter p {
-  margin: 0;
-  font-family: "Playfair Display", serif;
-  font-size: clamp(10px, .95vw, 13px);
-  line-height: 1.35;
-}
-
-.gift-heart {
-  position: absolute;
-  right: 14px;
-  top: 8px;
-  color: #d66a91;
-  font-size: 20px;
-}
-
-.gift-signoff {
-  margin: 1px 0 0;
-  text-align: center;
-  font-family: "Sacramento", cursive;
-  font-size: clamp(18px, 1.8vw, 26px);
-  color: #a64c70;
-}
-
-.gifts-bow {
-  position: absolute;
-  left: 50%;
-  top: 16px;
-  z-index: 10;
-  width: 105px;
-  height: 42px;
-  transform: translateX(-50%);
-}
-
-.gifts-bow i,
-.gifts-bow span {
-  position: absolute;
-  display: block;
-}
-
-.gifts-bow i {
-  left: 42px;
-  top: 12px;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: #de86a5;
-}
-
-.gifts-bow span {
-  top: 6px;
-  width: 48px;
-  height: 28px;
-  background: #ed9ab4;
-  border: 2px solid #fff6f9;
-}
-
-.gifts-bow span:first-child { left: 0; border-radius: 80% 30% 70% 35%; }
-.gifts-bow span:last-child { right: 0; border-radius: 30% 80% 35% 70%; }
-
-.game-page {
-  background:
-    linear-gradient(rgba(255, 224, 235, .36), rgba(255, 224, 235, .36)),
-    linear-gradient(90deg, rgba(181,78,111,.10) 50%, transparent 50%),
-    linear-gradient(rgba(181,78,111,.10) 50%, transparent 50%),
-    #f6dce7;
-  background-size: auto, 44px 44px, 44px 44px, auto;
-}
-
-.game-layout {
-  grid-template-rows: auto 1fr;
-  align-content: center;
-  padding-top: 28px;
-}
-
-.game-heading {
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.game-heading h1 {
-  margin: 4px 0;
-  color: #873a58;
-  font-family: "Sacramento", cursive;
-  font-size: clamp(38px, 5vw, 58px);
-  line-height: 1;
-}
-
-.game-heading p:last-child {
-  margin: 4px 0 0;
-  color: #9d4d69;
-}
-
-.game-sparkles {
-  position: absolute;
-  left: 50%;
-  top: 9%;
-  z-index: 3;
-  transform: translateX(-50%);
-  color: #d66a91;
-  letter-spacing: 16px;
-  font-size: 18px;
-  animation: floatDecor 3s ease-in-out infinite;
-}
-
-.quiz-card,
-.quiz-result {
-  height: min(390px, calc(100vh - 230px));
-  min-height: 330px;
-  margin: 0 auto;
-  box-sizing: border-box;
-}
-
-.quiz-result {
-  min-height: 330px;
-  max-height: calc(100vh - 230px);
-  padding: 20px 30px;
-}
-
-.quiz-result h2,
-.quiz-score,
-.result-message,
-.result-buttons {
-  margin-block: 6px;
-}
-
-.result-heart {
-  font-size: 58px;
-}
-
-.result-message {
-  line-height: 1.42;
-}
-
-.final-layout {
-  height: 100%;
-  align-items: center;
-  padding-block: 24px 74px;
-}
-
-.final-polaroid img {
-  height: min(58vh, 540px);
-  max-height: none;
-}
-
-.final-letter {
-  max-height: calc(100vh - 130px);
-  overflow-y: auto;
-}
-
-@media (max-width: 900px) {
-  .monthsary-grid { grid-template-columns:1fr 1.25fr; height:auto; }
-  .polaroid-left { display:none; } .polaroid-right { height:390px; } .polaroid-right img{height:330px}
-  .love-letter { min-height:390px; }
-  .reasons-layout,.final-layout { grid-template-columns:.75fr 1.25fr; gap:16px; }
-  .big-polaroid img,.final-polaroid img { height:55vh; }
-  .music-player { width:290px; }
-}
-@media (max-width: 650px) {
-  html,body { overflow:hidden; }
-  .story-page::before { inset:6px; border-radius:14px; }
-  .lock-card { padding:28px 20px 22px; }
-  .lock-card h1 { font-size:30px; }
-  .page-shell { overflow-y:auto; padding:20px 14px 70px; }
-  .page-heading { position:relative; top:auto; margin-bottom:12px; }
-  .page-heading h1 { font-size:28px; }
-  .monthsary-grid { height:auto; margin-top:0; grid-template-columns:1fr 1fr; gap:8px; align-items:start; }
-  .polaroid-left,.polaroid-right { display:block; } .polaroid { padding:7px 7px 28px; } .polaroid img { height:210px; }
-  .love-letter { grid-column:1/3; grid-row:2; min-height:auto; padding:22px 18px 18px; }
-  .letter-text { font-size:12px; }
-  .reasons-layout,.final-layout { display:block; overflow-y:auto; }
-  .reasons-photo { margin:0 0 10px; }.big-polaroid { width:220px;margin:auto }.big-polaroid img{height:220px}
-  .reasons-paper { max-height:none; padding:18px 16px; }
-  .reasons-list li { font-size:11px; min-height:31px; }
-  .final-polaroid { width:220px;margin:0 auto 12px }.final-polaroid img{height:220px}
-  .final-letter { max-height:none; padding:22px 18px; }
-  .final-letter .letter-script{font-size:34px}
-  .music-player { left:50%; right:auto; bottom:54px; width:290px; height:52px; transform:translateX(-50%); }
-  .album-art { width:36px;height:36px }.song-info{width:65px}.progress{width:55px}.volume{width:38px}
-  .page-indicator { bottom:8px; }
-
-  .gifts-page {
-    background:
-      radial-gradient(circle at 12% 18%, rgba(255,255,255,.52) 0 2px, transparent 3px),
-      linear-gradient(135deg, #f8dce7, #dfaebe);
-  }
-
-  .gifts-layout {
-    display: block;
-    overflow-y: auto;
-    padding: 44px 14px 80px;
-  }
-
-  .gifts-heading {
-    margin-bottom: 10px;
-  }
-
-  .gifts-heading h1 { font-size: 36px; }
-  .gifts-heading p:last-child { font-size: 12px; }
-
-  .gifts-polaroid {
-    width: min(82%, 310px);
-    margin: 0 auto 12px;
-  }
-
-  .gifts-polaroid img { height: 270px; }
-
-  .gift-copy {
-    height: auto;
-    max-height: none;
-  }
-
-  .gift-letter {
-    margin-bottom: 8px;
-  }
-
-  .gift-letter p { font-size: 12px; }
-}
-
+  /* FINAL RESPONSIVE REBUILD — one-screen fit with internal scrolling where needed */
 [hidden] { display: none !important; }
+html, body { width: 100%; height: 100%; overflow: hidden; }
+.story, .story-page { height: 100svh; min-height: 100svh; }
+.story-page { overflow-x: hidden; overflow-y: auto; overscroll-behavior: contain; }
+.page-shell { min-height: 100%; height: auto; }
 
-.lock-page {
-  overflow: hidden;
-}
-
+.lock-page { display: grid; place-items: center; padding: 18px 12px; }
 .lock-card {
-  width: min(88%, 430px);
-  max-height: calc(100vh - 110px);
+  width: min(88vw, 430px);
+  max-height: calc(100svh - 36px);
   overflow: hidden;
+  padding: 26px 32px 22px;
 }
-
 .passcode-row {
   width: 100%;
   max-width: 330px;
   margin: 0 auto;
-  grid-template-columns: minmax(118px, 1fr) minmax(150px, 1fr);
-  align-items: center;
+  grid-template-columns: 118px minmax(150px, 1fr);
+  gap: 9px;
 }
+.passcode-row input,
+.passcode-row .primary-button { min-width: 0; }
+.passcode-row input { width: 118px; padding: 0 8px; letter-spacing: 8px; }
+.passcode-row .primary-button { width: 100%; padding-inline: 12px; white-space: nowrap; }
+.lock-message { max-width: 330px; margin-inline: auto; }
+.envelope { flex-shrink: 0; }
 
-.passcode-row input {
-  width: 100%;
-  min-width: 0;
-  padding: 0 8px;
-  letter-spacing: 10px;
+.game-layout {
+  grid-template-rows: auto minmax(0, 1fr);
+  align-content: center;
+  padding-block: 18px 78px;
 }
-
-.passcode-row .primary-button {
-  width: 100%;
-  min-width: 0;
-  white-space: nowrap;
-}
-
-.lock-message {
-  max-width: 330px;
-  margin-inline: auto;
-}
-
-.quiz-card,
-.quiz-result {
-  height: min(390px, calc(100vh - 230px));
-  min-height: 330px;
+.game-heading { margin-bottom: 6px; }
+.quiz-card, .quiz-result {
+  width: min(92%, 650px);
+  height: auto;
+  min-height: 0;
+  max-height: calc(100svh - 230px);
+  justify-self: center;
+  align-self: center;
   margin: 0 auto;
-  box-sizing: border-box;
-}
-
-.quiz-result {
-  min-height: 330px;
-  max-height: calc(100vh - 230px);
-  padding: 20px 30px;
-}
-
-.quiz-result h2,
-.quiz-score,
-.result-message,
-.result-buttons {
-  margin-block: 6px;
-}
-
-.result-heart {
-  font-size: 58px;
-}
-
-.result-message {
-  line-height: 1.42;
-}
-
-.final-layout {
-  height: 100%;
-  align-items: center;
-  padding-block: 24px 74px;
-}
-
-.final-polaroid img {
-  height: min(58vh, 540px);
-  max-height: none;
-}
-
-.final-letter {
-  max-height: calc(100vh - 130px);
   overflow-y: auto;
+  padding: 22px 30px;
 }
+.quiz-result { display: grid; place-items: center; align-content: center; }
+.quiz-question { min-height: 44px; margin: 2px 0 8px; }
+.quiz-feedback { min-height: 22px; margin: 7px 0 3px; }
+.result-heart { font-size: 52px; }
+.result-message { margin-bottom: 10px; line-height: 1.42; }
+
+.final-layout { align-items: center; height: 100%; padding-block: 20px 70px; }
+.final-letter { max-height: calc(100svh - 120px); overflow-y: auto; }
 
 @media (max-width: 650px) {
-  .lock-card {
-    width: min(88%, 390px);
-    max-height: calc(100vh - 72px);
-    padding: 22px 16px 18px;
-  }
+  .lock-page { padding: 14px 10px 72px; }
+  .lock-card { width: min(92vw, 390px); max-height: calc(100svh - 86px); padding: 20px 14px 16px; }
+  .lock-card h1 { font-size: 28px; margin: 2px 0 4px; }
+  .script-line { font-size: 21px; }
+  .intro { margin-bottom: 6px; }
+  .envelope { width: 150px; height: 92px; margin-block: 4px 6px; }
+  .passcode-label { margin: 6px 0 5px; }
+  .passcode-row { max-width: 300px; grid-template-columns: 112px minmax(0, 1fr); gap: 7px; }
+  .passcode-row input { width: 112px; height: 48px; font-size: 19px; }
+  .passcode-row .primary-button { height: 48px; padding-inline: 7px; font-size: 13px; }
+  .lock-message { min-height: 17px; margin-top: 4px; }
 
-  .lock-card h1 { margin-bottom: 4px; }
-  .script-line { font-size: 23px; }
-  .intro { margin-bottom: 8px; }
+  .game-layout { height: 100%; overflow-y: auto; padding: 42px 12px 78px; }
+  .game-heading { margin-bottom: 8px; }
+  .game-heading h1 { font-size: 30px; }
+  .quiz-card, .quiz-result { width: 94%; max-height: none; min-height: 330px; padding: 18px 14px; }
+  .quiz-answers { grid-template-columns: 1fr; gap: 7px; }
+  .quiz-answer { min-height: 44px; }
+  .quiz-question { min-height: 58px; }
 
-  .envelope {
-    width: 150px;
-    height: 94px;
-  }
+  .final-layout { display: block; height: 100%; overflow-y: auto; padding: 18px 14px 82px; }
+  .final-polaroid { width: 180px; margin: 0 auto 10px; }
+  .final-polaroid img { height: 180px; }
+  .final-letter { max-height: none; overflow: visible; padding: 20px 16px; }
 
-  .passcode-label { margin: 8px 0 6px; }
+  .music-player { bottom: 54px; }
+  .page-indicator { bottom: 8px; }
+}
 
-  .passcode-row {
-    max-width: 310px;
-    grid-template-columns: minmax(104px, 1fr) minmax(145px, 1.35fr);
-    gap: 7px;
-  }
-
-  .passcode-row input {
-    height: 48px;
-    font-size: 20px;
-  }
-
-  .passcode-row .primary-button {
-    height: 48px;
-    padding-inline: 10px;
-  }
-
-  .lock-message {
-    min-height: 18px;
-    margin-top: 5px;
-  }
-
-  .game-layout {
-    grid-template-rows: auto minmax(0, 1fr);
-  }
-
-  .quiz-card,
-  .quiz-result {
-    width: 94%;
-    height: min(390px, calc(100vh - 205px));
-    min-height: 300px;
-  }
-
-  .quiz-result {
-    padding: 14px 16px;
-  }
-
-  .result-heart { font-size: 48px; }
-  .quiz-result h2 { font-size: 24px; }
-  .result-message { font-size: 12px; }
-
-  .final-layout {
-    display: block;
-    height: 100%;
-    overflow-y: auto;
-    padding: 16px 14px 74px;
-  }
-
-  .final-polaroid {
-    width: 180px;
-    margin: 0 auto 10px;
-  }
-
-  .final-polaroid img {
-    height: 180px;
-  }
-
-  .final-letter {
-    max-height: none;
-    overflow: visible;
-  }
+@media (max-height: 700px) {
+  .lock-card { padding-block: 16px; }
+  .script-line { margin-top: 0; }
+  .intro { display: none; }
+  .envelope { height: 82px; }
 }
