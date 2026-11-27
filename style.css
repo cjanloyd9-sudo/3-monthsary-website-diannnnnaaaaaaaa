@@ -494,13 +494,18 @@ img { display: block; max-width: 100%; }
 }
 
 @media (max-width: 650px) {
-  .monthsary-grid {
-    grid-template-columns: 1fr 1fr;
+  #page-anniversary .monthsary-grid {
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     justify-content: center;
     justify-items: center;
   }
-  .polaroid-left,
-  .polaroid-right {
+  #page-anniversary .polaroid-left,
+  #page-anniversary .polaroid-right {
     justify-self: center;
+    align-self: center;
+    width: min(82%, 150px);
+    max-width: 150px;
+    margin: 0 auto;
   }
 }
