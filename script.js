@@ -200,7 +200,7 @@ document.getElementById("restartButton").addEventListener("click", () => {
   window.setTimeout(() => passcode.focus(), 100);
 });
 
-// Five-question anniversary quiz.
+// Six-question anniversary quiz.
 const quizQuestions = [
   {
     question: "What was our first hangout just us togethier?",
@@ -225,6 +225,11 @@ const quizQuestions = [
   {
     question: "How many months are we celebrating?",
     answers: ["One", "Two", "Three", "Four"],
+    correct: 2
+  },
+  {
+    question: "Am I gay?",
+    answers: ["Lesbian honest", "Maybe", "BABY HELL NOO", "James Charles level"],
     correct: 2
   }
 ];
@@ -308,10 +313,10 @@ function showQuizResult() {
   quizCard.hidden = true;
   quizResult.hidden = false;
 
-  let resultText = `${quizScore}/5`;
-  if (quizScore === 5) {
+  let resultText = `${quizScore}/${quizQuestions.length}`;
+  if (quizScore === quizQuestions.length) {
     resultText += " — YOU KNOW US SO WELL!";
-  } else if (quizScore >= 3) {
+  } else if (quizScore >= 4) {
     resultText += " — YOU KNOW OUR LOVE STORY BEAUTIFULLY!";
   } else {
     resultText += " — EVERY ANSWER IS ANOTHER MEMORY TO LOVE!";
